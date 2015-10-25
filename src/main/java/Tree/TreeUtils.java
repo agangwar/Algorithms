@@ -17,7 +17,7 @@ public class TreeUtils {
 			return output;
 		inorderSup(root.getLeft());
 		//For Debug
-		//System.out.print(root.getData()+"->");
+		System.out.print(root.getData()+"->");
 		output = output + root.getData()+"->";
 		inorderSup(root.getRight());
 		return output;
