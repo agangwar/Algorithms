@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="String.StringTest">
+        <methods>
+          <include name="TransformInMinimumOperationTest_1"/>
+          <include name="TransformInMinimumOperationTest_2"/>
+          <include name="TransformInMinimumOperationTest_3"/>
+          <include name="TransformInMinimumOperationTest_4"/>
+          <include name="TransformInMinimumOperationTest_5"/>
+          <include name="TransformInMinimumOperationTest_6"/>
+        </methods>
+      </class> <!-- String.StringTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

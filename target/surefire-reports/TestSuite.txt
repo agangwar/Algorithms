@@ -1,0 +1,38 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.683 sec <<< FAILURE!
+TransformInMinimumOperationTest_1(String.StringTest)  Time elapsed: 0.028 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/apache/log4j/Logger
+	at String.TransformInMinimumOperation.<clinit>(TransformInMinimumOperation.java:8)
+	at String.StringTest.TransformInMinimumOperationTest_1(StringTest.java:11)
+Caused by: java.lang.ClassNotFoundException: org.apache.log4j.Logger
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 36 more
+
+TransformInMinimumOperationTest_2(String.StringTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: Could not initialize class String.TransformInMinimumOperation
+	at String.StringTest.TransformInMinimumOperationTest_2(StringTest.java:16)
+
+TransformInMinimumOperationTest_3(String.StringTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: Could not initialize class String.TransformInMinimumOperation
+	at String.StringTest.TransformInMinimumOperationTest_3(StringTest.java:21)
+
+TransformInMinimumOperationTest_4(String.StringTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: Could not initialize class String.TransformInMinimumOperation
+	at String.StringTest.TransformInMinimumOperationTest_4(StringTest.java:26)
+
+TransformInMinimumOperationTest_5(String.StringTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: Could not initialize class String.TransformInMinimumOperation
+	at String.StringTest.TransformInMinimumOperationTest_5(StringTest.java:31)
+
+TransformInMinimumOperationTest_6(String.StringTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: Could not initialize class String.TransformInMinimumOperation
+	at String.StringTest.TransformInMinimumOperationTest_6(StringTest.java:36)
+
