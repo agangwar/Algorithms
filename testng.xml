@@ -12,6 +12,7 @@
    <classes>
       <class name="String.StringTest"/>
       <class name="Tree.TreeTest"/>
+      <class name="Array.ArrayTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

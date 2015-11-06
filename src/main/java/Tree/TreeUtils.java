@@ -1,13 +1,24 @@
 package Tree;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Queue;
+import java.util.LinkedList;
 import java.util.Stack;
+
 import Stack.StackUtils;
 
-public class TreeUtils {
-	//All the Traversal orders in Recursive manner
+public class TreeUtils{
 	static String output = "";
+	public static int height(TreeNode root){
+		if(root==null)
+			return 0;
+		int l = height(root.getLeft())+1;
+		int r = height(root.getRight())+1;
+		if(l>r)
+			return l;
+		else
+			return r;
+	}
 	public static String inorder(TreeNode root){
 		output = "";
 		return inorderSup(root);
@@ -16,9 +27,9 @@ public class TreeUtils {
 		if(root==null)
 			return output;
 		inorderSup(root.getLeft());
-		//For Debug
-		System.out.print(root.getData()+"->");
 		output = output + root.getData()+"->";
+		//For Debug
+		//System.out.print(root.getData()+"->");
 		inorderSup(root.getRight());
 		return output;
 	}
@@ -29,9 +40,7 @@ public class TreeUtils {
 	private static String preorderSup(TreeNode root){
 		if(root==null)
 			return output;
-		//For Debug
-		//System.out.print(root.getData()+"->");
-		output = output + root.getData()+"->";
+		output = output + root.getData() + "->";
 		preorderSup(root.getLeft());
 		preorderSup(root.getRight());
 		return output;
@@ -45,102 +54,115 @@ public class TreeUtils {
 			return output;
 		postorderSup(root.getLeft());
 		postorderSup(root.getRight());
-		//For Debug
-		//System.out.print(root.getData()+"->");
-		output = output + root.getData()+"->";
+		output = output + root.getData() + "->";
 		return output;
 	}
-	public static int height(TreeNode root){
+	public static void printLevel(TreeNode root, int level){
 		if(root==null)
-			return 0;
-		int l = height(root.getLeft())+1;
-		int r = height(root.getRight())+1;
-		if(l>r)
-			return l;
-		else
-			return r;
-	}
-	public static void printLevel(TreeNode root,int level){
-		if(root==null)
+			return;
+		if(level==0)
 			return;
 		if(level==1)
 			System.out.print(root.getData()+"->");
 		printLevel(root.getLeft(),level-1);
 		printLevel(root.getRight(),level-1);
 	}
-	public static void levelorder(TreeNode root){
-		int h = height(root);
-		for(int i=1;i<=h;i++){
+	public static void levelOrder(TreeNode root){
+		for(int i=1;i<=height(root);i++){
 			printLevel(root,i);
 			System.out.println();
 		}
 	}
-	private static void printSpiralLevel(TreeNode root, int level, boolean front){
+	private static void spiralLevelOrderSup(TreeNode root, int level, boolean front){
 		if(root==null)
+			return;
+		if(level==0)
 			return;
 		if(front==true){
 			if(level==1)
 				System.out.print(root.getData()+"->");
-			printSpiralLevel(root.getLeft(),level-1,front);
-			printSpiralLevel(root.getRight(),level-1,front);
+			spiralLevelOrderSup(root.getLeft(),level-1,front);
+			spiralLevelOrderSup(root.getRight(),level-1,front);
 		}else{
 			if(level==1)
-				System.out.print(root.getData()+"->");		
-			printSpiralLevel(root.getRight(),level-1,front);
-			printSpiralLevel(root.getLeft(),level-1,front);
+				System.out.print(root.getData()+"->");
+			spiralLevelOrderSup(root.getRight(),level-1,front);
+			spiralLevelOrderSup(root.getLeft(),level-1,front);			
 		}
 	}
-	public static void spiral_levelorder(TreeNode root){
-		int h = height(root);
+	public static void spiralLevelOrder(TreeNode root){
 		boolean front = true;
-		for(int i=1;i<=h;i++){
-			printSpiralLevel(root,i,front);
+		for(int i=1;i<=height(root);i++){
+			spiralLevelOrderSup(root,i,front);
 			front = !front;
 			System.out.println();
 		}
 	}
-	//All the Traversal orders in Iterative manner
-	public static String levelorderI(TreeNode root){
+	public static String iLevelorder(TreeNode root){
 		output = "";
 		if(root==null)
 			return output;
-		return levelorderISup(root);
-	}
-	private static String levelorderISup(TreeNode root){
-		Queue<TreeNode> q = new LinkedList<TreeNode>();
-		q.add(root);
-		while(!q.isEmpty()){	
-			TreeNode temp = q.peek();
-			//System.out.print(temp.getData()+"->");
-			output = output + temp.getData()+"->";
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		queue.add(root);
+		while(!queue.isEmpty()){
+			TreeNode temp = queue.peek();
+			output = output + temp.getData() + "->";
 			if(temp.getLeft()!=null)
-				q.add(temp.getLeft());
+				queue.add(temp.getLeft());
 			if(temp.getRight()!=null)
-				q.add(temp.getRight());
-			q.remove();
+				queue.add(temp.getRight());
+			queue.remove();
 		}
 		return output;
 	}
-	public static String postorderI(TreeNode root){
+	public static TreeNode BST_LCA(TreeNode root, int n1, int n2){
 		if(root==null)
 			return null;
-		return postorderISup(root);
+		if(root.getData()>n1 && root.getData()>n2)
+			return BST_LCA(root.getLeft(),n1,n2);
+		if(root.getData()<n1 && root.getData()<n2)
+			return BST_LCA(root.getRight(),n1,n2);
+		return root;
 	}
-	private static String postorderISup(TreeNode root){
-		Stack<TreeNode> st1 = new Stack<TreeNode>();
-		Stack<TreeNode> st2 = new Stack<TreeNode>();
-		st1.push(root);
-		while(!st1.isEmpty()){
-			TreeNode temp = st1.peek();
-			st2.push(st1.pop());
-			if(temp.getLeft()!=null)
-				st1.push(temp.getLeft());
-			if(temp.getRight()!=null)
-				st1.push(temp.getRight());
+	public static void printLeafPath(TreeNode root, TreeNode[] path, int i){
+		if(root==null)
+			return;
+		if(root.getLeft()==null && root.getRight()==null){
+			path[i]=root;
+			printArray(path,i);
+			return;
 		}
-		String output = StackUtils.printTreeNode(st2);
-		st1.clear();
-		st2.clear();
-		return output;
+		path[i]=root;
+		printLeafPath(root.getLeft(),path,i+1);
+		printLeafPath(root.getRight(),path,i+1);
 	}
+	private static void printArray(TreeNode[] path,int len){
+		System.out.print("Leaf Path: ");
+		for(int i=0;i<=len;i++)
+			System.out.print(path[i].getData()+"->");
+		System.out.println();	
+	}
+	public static void pathSumTree(TreeNode root, TreeNode target, int sum){
+		if(root==null || target==null)
+			return;
+		if(root==target){
+			sum = sum + root.getData();
+			System.out.println("Sum->"+sum);
+			return;
+		}
+		sum = sum + root.getData();
+		pathSumTree(root.getLeft(),target, sum);
+		pathSumTree(root.getRight(),target, sum);
+		return;
+	}
+	public static boolean isFullTree(TreeNode root){
+		if(root==null)
+			return true;
+		if(root.getLeft()==null && root.getRight()==null)
+			return true;
+		if(root.getLeft()!=null && root.getRight()!=null)
+			return (isFullTree(root.getLeft()) && isFullTree(root.getRight()));
+		return false;
+	}
+	
 }

@@ -1,5 +1,7 @@
 package Tree;
 
+import java.util.ArrayList;
+
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
@@ -33,24 +35,35 @@ public class TreeTest {
 	}
 	@Test(groups = { "A", "Z" })
 	public void postorderTest(){
-		Assert.assertEquals(TreeUtils.postorderI(root), TreeUtils.postorder(root));
+		Assert.assertEquals("40->50->20->60->70->30->10->", TreeUtils.postorder(root));
+		//Assert.assertEquals(TreeUtils.postorder(root),TreeUtils.iPostorder(root));
 	}
 	@Test(groups = { "A", "Z" })
-	public void levelorderTest(){
-		System.out.println("Strating Level Order Test");
-		TreeUtils.levelorder(root);
-		System.out.println("Expected output:\n10->\n20->30->\n40->50->60->70->");
+	public void printLevelTest(){
+		TreeUtils.printLevel(root, 0);
+		TreeUtils.printLevel(root, 1);
 	}
 	@Test(groups = { "A", "Z" })
-	public void spiral_levelorderTest(){
-		System.out.println("Strating Spiral Level Order Test");
-		TreeUtils.spiral_levelorder(root);
-		System.out.println("Expected output:\n10->\n30->20->\n40->50->60->70->");
+	public void levelOrderTest(){
+		TreeUtils.levelOrder(root);
+		Assert.assertEquals("10->20->30->40->50->60->70->", TreeUtils.iLevelorder(root));
 	}
 	@Test(groups = { "A", "Z" })
-	public void levelorderITest(){
-		//System.out.println("Strating Level Order Iterative Test");
-		//System.out.println(TreeUtils.levelorderI(root));
-		Assert.assertEquals("10->20->30->40->50->60->70->", TreeUtils.levelorderI(root));
+	public void spiralLevelOrderTest(){
+		TreeUtils.spiralLevelOrder(root);
+	}
+	@Test(groups = { "A", "Z" })
+	public void pathSumTreeTest(){
+		TreeUtils.pathSumTree(root, null,0);
+		TreeUtils.pathSumTree(null, null,0);
+		TreeUtils.pathSumTree(null, root,0);
+		TreeUtils.pathSumTree(root, root,0);
+		TreeUtils.pathSumTree(root, root.getLeft(),0);
+		TreeUtils.pathSumTree(root, root.getRight(),0);
+	}
+	@Test(groups = { "A", "Z" })
+	public void printPathTest(){
+		TreeNode[] path = new TreeNode[100];
+		TreeUtils.printLeafPath(root, path, 0);
 	}
 }

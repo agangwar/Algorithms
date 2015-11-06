@@ -2,10 +2,7 @@ package String;
 
 import java.util.*;
 
-import org.apache.log4j.Logger;
-
 public class TransformInMinimumOperation {
-	static Logger log = Logger.getLogger(TransformInMinimumOperation.class.getName());
 	private boolean compare(String A, String B){
 		HashMap<Character,Integer> hma = new HashMap<Character,Integer>();
 		HashMap<Character,Integer> hmb = new HashMap<Character,Integer>();

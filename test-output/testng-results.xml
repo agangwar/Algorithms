@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="9" passed="9">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="44" started-at="2015-10-31T19:05:04Z" finished-at="2015-10-31T19:05:04Z">
+    <groups>
+      <group name="A">
+        <method signature="TreeTest.createTree()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="createTree" class="Tree.TreeTest"/>
+        <method signature="TreeTest.inorderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="inorderTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.levelOrderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="levelOrderTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.pathSumTreeTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="pathSumTreeTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.postorderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="postorderTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.preorderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="preorderTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.printLevelTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="printLevelTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.printPathTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="printPathTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.spiralLevelOrderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="spiralLevelOrderTest" class="Tree.TreeTest"/>
+      </group> <!-- A -->
+      <group name="Z">
+        <method signature="TreeTest.createTree()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="createTree" class="Tree.TreeTest"/>
+        <method signature="TreeTest.inorderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="inorderTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.levelOrderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="levelOrderTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.pathSumTreeTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="pathSumTreeTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.postorderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="postorderTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.preorderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="preorderTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.printLevelTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="printLevelTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.printPathTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="printPathTest" class="Tree.TreeTest"/>
+        <method signature="TreeTest.spiralLevelOrderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="spiralLevelOrderTest" class="Tree.TreeTest"/>
+      </group> <!-- Z -->
+    </groups>
+    <test name="Default test" duration-ms="44" started-at="2015-10-31T19:05:04Z" finished-at="2015-10-31T19:05:04Z">
+      <class name="Tree.TreeTest">
+        <test-method status="PASS" signature="createTree()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="createTree" duration-ms="14" started-at="2015-11-01T00:35:04Z" finished-at="2015-11-01T00:35:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTree -->
+        <test-method status="PASS" signature="inorderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="inorderTest" duration-ms="0" started-at="2015-11-01T00:35:04Z" finished-at="2015-11-01T00:35:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inorderTest -->
+        <test-method status="PASS" signature="levelOrderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="levelOrderTest" duration-ms="1" started-at="2015-11-01T00:35:04Z" finished-at="2015-11-01T00:35:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- levelOrderTest -->
+        <test-method status="PASS" signature="pathSumTreeTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="pathSumTreeTest" duration-ms="1" started-at="2015-11-01T00:35:04Z" finished-at="2015-11-01T00:35:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pathSumTreeTest -->
+        <test-method status="PASS" signature="postorderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="postorderTest" duration-ms="1" started-at="2015-11-01T00:35:04Z" finished-at="2015-11-01T00:35:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postorderTest -->
+        <test-method status="PASS" signature="preorderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="preorderTest" duration-ms="1" started-at="2015-11-01T00:35:04Z" finished-at="2015-11-01T00:35:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preorderTest -->
+        <test-method status="PASS" signature="printLevelTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="printLevelTest" duration-ms="0" started-at="2015-11-01T00:35:04Z" finished-at="2015-11-01T00:35:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- printLevelTest -->
+        <test-method status="PASS" signature="printPathTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="printPathTest" duration-ms="1" started-at="2015-11-01T00:35:04Z" finished-at="2015-11-01T00:35:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- printPathTest -->
+        <test-method status="PASS" signature="spiralLevelOrderTest()[pri:0, instance:Tree.TreeTest@39f58a0e]" name="spiralLevelOrderTest" duration-ms="1" started-at="2015-11-01T00:35:04Z" finished-at="2015-11-01T00:35:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- spiralLevelOrderTest -->
+      </class> <!-- Tree.TreeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
